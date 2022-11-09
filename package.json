@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "npm": "8.x",
+    "node": "16.x"
+  },
   "scripts": {
     "start": "node src/index.js",
     "dev": "env-cmd -f ./config/dev.env nodemon src/index.js",
     "mongo": "nodemon mongodb.js",
-    "mongoose": "env-cmd -f ./config/prod.env nodemon mongoose.js"
+    "mongoose": "env-cmd -f ./config/prod.env nodemon mongoose.js",
+    "test": "env-cmd -f ./config/test.env jest --watch --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC",
@@ -25,9 +33,11 @@
     "validator": "^13.7.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20",
     "cross-env": "^7.0.3",
     "dotenv": "^16.0.3",
-    "env-cmd": "^10.1.0"
+    "env-cmd": "^10.1.0",
+    "jest": "^29.2.2",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.1"
   }
 }

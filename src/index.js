@@ -1,21 +1,6 @@
-
-const express = require('express')
-require('./db/mongoose')
-const userRouter = require('./routes/userrouter')
-const taskRouter = require('./routes/taskrouter')
-//const fourOhFourRouter = require('./routes/404router')
-
-
-
-const app = express()
+const app = require('./app')
 const port = process.env.PORT
 
-
-
-app.use(express.json())
-app.use(userRouter)
-app.use(taskRouter)
-//app.use(fourOhFourRouter)
 
 app.listen(port, () => {
     console.log('server is rollin on prt:' + port)

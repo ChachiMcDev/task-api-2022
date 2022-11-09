@@ -39,7 +39,7 @@ router.post('/users', async (req, res) => {
 
         await user.save()
         const token = await user.generateAuthToken()
-        // sendWelcomeEmail(user.email, user.name)
+        //sendWelcomeEmail(user.email, user.name)
         res.status(201).send({ user, token })
 
     } catch (e) {
@@ -141,7 +141,7 @@ router.delete('/users/me', auth, async (req, res) => {
         //     return res.status(404).send('User ID not found')
         // }
         await req.user.remove()
-        sendCancellationEmail(req.user.email, req.user.name)
+        //sendCancellationEmail(req.user.email, req.user.name)
         res.status(200).send({ deletedUser: req.user })
 
     } catch (e) {
